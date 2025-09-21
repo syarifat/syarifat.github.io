@@ -3,322 +3,500 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio | Syarif A. Taqwim</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>Syarif A. Taqwim | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <script src="navbar-active.js" defer></script>
   <style>
+    :root {
+      --gradient: linear-gradient(90deg, #ffe084 0%, #ffb6d5 40%, #aee6ff 80%, #b5baff 100%);
+      --bg-dark: #18191a;
+      --text-main: #fff;
+      --text-sub: #bdbdbd;
+      --box1: linear-gradient(135deg, #ffe084 0%, #ffb6d5 100%);
+      --box2: linear-gradient(135deg, #aee6ff 0%, #b5baff 100%);
+      --box3: linear-gradient(135deg, #ffd6a5 0%, #fdffb6 100%);
+      --box4: linear-gradient(135deg, #b5baff 0%, #aee6ff 100%);
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
-      color: #212529;
-      transition: background-color 0.3s, color 0.3s;
       min-height: 100vh;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
     }
-    body.dark-mode {
-      background-color: #121212;
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      min-height: 78vh;
+      padding: 2.5rem 4vw 1.5rem 4vw;
+      position: relative;
+      z-index: 1;
+      gap: 2.5rem;
+    }
+    .hero-left {
+      flex: 1 1 350px;
+      min-width: 320px;
+      max-width: 600px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .hero-title {
+      font-size: 3.1rem;
+      font-weight: 800;
+      line-height: 1.13;
+      margin-bottom: 1.2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      word-break: break-word;
+    }
+    .hero-desc {
       color: #e0e0e0;
+      font-size: 1.13rem;
+      font-weight: 400;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.01em;
+      max-width: 520px;
+      line-height: 1.6;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.10);
     }
-    /* Navbar */
-    .navbar {
-      background-color: #fff;
-      transition: background-color 0.3s;
+    .hero-right {
+      flex: 1 1 320px;
+      min-width: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
-    body.dark-mode .navbar {
-      background-color: #1f1f1f;
+    .hero-illustration {
+      background: #232323;
+      border-radius: 2rem;
+      width: 320px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+      position: relative;
     }
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: inherit !important;
+    .hero-illustration .hero-photo {
+      width: 88%;
+      height: 88%;
+      object-fit: cover;
+      border-radius: 1.5rem;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.13);
+      background: #222;
+      border: 2px solid #ffe08433;
+      display: block;
+      margin: 0 auto;
+      transition: box-shadow 0.2s;
     }
-    .nav-link {
-      color: #212529;
-      transition: color 0.3s;
+    .hero-illustration .hero-photo:hover {
+      box-shadow: 0 4px 32px 0 rgba(255,224,132,0.18);
     }
-    .nav-link:hover, .nav-link:focus {
-      color: #000;
+    /* Gradient Boxes */
+    .box-grad {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      z-index: 2;
+      opacity: 0.9;
     }
-    body.dark-mode .nav-link {
-      color: #ccc;
+  .box1 { top: 38px; left: 38px; background: var(--box1); }
+  .box2 { top: 38px; right: 38px; background: var(--box2); }
+  .box3 { bottom: 38px; left: 70px; background: var(--box3); }
+  .box4 { bottom: 38px; right: 70px; background: var(--box4); }
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        padding: 1.5rem 2vw 0.5rem 2vw;
+        gap: 1.5rem;
+      }
+      .hero-left, .hero-right {
+        max-width: 100vw;
+        padding: 0;
+        align-items: center;
+      }
+      .box1, .box2, .box3, .box4 {
+        width: 48px; height: 48px;
+        border-radius: 12px;
+      }
     }
-    body.dark-mode .nav-link:hover, body.dark-mode .nav-link:focus {
-      color: #fff;
-    }
-    /* Section Titles */
-    .section-title {
-      border-left: 4px solid #6c757d;
-      padding-left: 0.75rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: inherit;
-    }
-    /* Cards */
-    .card {
-      background-color: #fff;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: background-color 0.3s, color 0.3s;
-      color: #212529;
-    }
-    .card:hover {
-      background-color: #e9ecef;
-    }
-    body.dark-mode .card {
-      background-color: #1e1e1e;
-      color: #ccc;
-      box-shadow: 0 2px 10px rgba(255,255,255,0.1);
-    }
-    body.dark-mode .card:hover {
-      background-color: #2c2c2c;
-    }
-    /* Links */
-    a {
-      color: #212529;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    a:hover, a:focus {
-      color: #000;
-      text-decoration: underline;
-    }
-    body.dark-mode a {
-      color: #ccc;
-    }
-    body.dark-mode a:hover, body.dark-mode a:focus {
-      color: #fff;
-      text-decoration: underline;
-    }
-    /* Header */
-    header {
-      background-color: #fff;
-      border-bottom: 1px solid #dee2e6;
-      transition: background-color 0.3s;
-      padding: 3rem 1rem;
-      color: #212529;
-    }
-    body.dark-mode header {
-      background-color: #1f1f1f;
-      border-color: #444;
-      color: #eee;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #6c757d;
-    }
-    body.dark-mode header p {
-      color: #bbb;
-    }
-    /* Footer */
-    footer {
-      padding: 1.5rem 1rem;
-      text-align: center;
-      color: #6c757d;
-      border-top: 1px solid #dee2e6;
-      transition: color 0.3s, border-color 0.3s;
-    }
-    body.dark-mode footer {
-      color: #999;
-      border-color: #444;
-    }
-    /* Theme Toggle Button */
-    .theme-toggle-btn {
-      border: none;
-      background: transparent;
-      font-size: 1.3rem;
-      cursor: pointer;
-      color: inherit;
-      transition: color 0.3s;
-    }
-    .theme-toggle-btn:focus {
-      outline: none;
-      color: #0d6efd;
-    }
-    /* Responsive paddings */
-    main > section {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 1.45rem;
+        line-height: 1.18;
+      }
+      .hero-illustration {
+        width: 160px; height: 160px;
+        border-radius: 1.2rem;
+      }
+      .hero-desc {
+        font-size: 0.98rem;
+        max-width: 98vw;
+      }
+      .box1, .box2, .box3, .box4 {
+        width: 32px; height: 32px;
+        border-radius: 8px;
+      }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="#">Syarif A. Taqwim</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item ms-3">
-            <button class="theme-toggle-btn" aria-label="Toggle light/dark mode" id="themeToggleBtn">
-              <i id="themeIcon" class="fas fa-moon"></i>
-            </button>
-          </li>
+  <!-- Gradient Boxes -->
+  <div class="box-grad box1"></div>
+  <div class="box-grad box2"></div>
+  <div class="box-grad box3"></div>
+  <div class="box-grad box4"></div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-left"><div class="hero-title">Hi. I’m Syarif.<br/>A Programmer & Network Engineer.</div>
+      <div class="hero-desc">
+        I write code, fix networks, and sometimes even my own coffee machine. Let’s build something cool (and maybe debug it together)!
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-illustration">
+        <img src="my.jpg" alt="Syarif A. Taqwim" class="hero-photo" loading="lazy" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="about-me-section" id="about">
+    <div class="about-title">About Me</div>
+    <div class="about-desc">
+      I am a passionate software developer and network engineer specializing in web, mobile, IoT, and IT infrastructure. I focus on building integrated, user-centric digital solutions with strong code quality and security. Always eager to learn, I enjoy connecting technology fields to deliver real impact and continuous innovation.
+    </div>
+  </section>
+
+  <!-- What I Do Section -->
+  <section class="whatido-section">
+    <div class="whatido-title">What I Do</div>
+    <div class="whatido-cols">
+      <div class="whatido-col">
+        <div class="whatido-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="whatido-heading">Programming</div>
+        <ul>
+          <li>Fullstack Web Development (Laravel, React.js, Node.js)</li>
+          <li>Mobile Apps (Android, Flutter)</li>
+          <li>IoT & Embedded (ESP32, Arduino, Raspberry Pi)</li>
+          <li>API, Database, Cloud, CI/CD</li>
+        </ul>
+      </div>
+      <div class="whatido-col">
+        <div class="whatido-icon"><i class="fas fa-network-wired"></i></div>
+        <div class="whatido-heading">Networking</div>
+        <ul>
+          <li>Linux Server, Web Server, Mail Server</li>
+          <li>Mikrotik, VPN, Network Security</li>
+          <li>Cloud Infrastructure, Monitoring</li>
+          <li>Community IT Support, CCTV, VOIP</li>
         </ul>
       </div>
     </div>
-  </nav>
+  </section>
 
-  <header>
-    <div class="container text-center">
-      <h1>Syarif A. Taqwim</h1>
-    <p>Web & Mobile Developer | IoT Maker | Network Engineer | AI Enthusiast</p>
+  <!-- Projects Section -->
+  <section class="projects-section" id="work">
+    <div class="projects-title">Projects</div>
+    <div class="project-status-indicator">
+      <span class="status-badge finished"></span> <span class="status-label">Finished</span>
+      <span class="status-badge ongoing"></span> <span class="status-label">Ongoing</span>
     </div>
-  </header>
-
-  <main>
-    <section class="container" id="about">
-      <div class="section-title">About Me</div>
-      <p align="justify">
-        I am a passionate software developer with expertise in Web Development, Mobile Applications, Internet of Things (IoT), and Networking. My focus is on building integrated, functional, and impactful digital solutions for users, while continuously expanding my skills across various technology fields. In Web Development, I design and develop responsive, well-structured web applications with a strong emphasis on code quality, system security, and optimal user experience. In Mobile Development, I create interactive and user-friendly apps, always exploring the latest technologies to support efficient cross-platform development. In the IoT domain, I build systems that connect physical devices with digital applications, aiming to deliver adaptive solutions that integrate seamlessly with other platforms. Additionally, I am skilled in Networking & IT Infrastructure, from server configuration and network management to communication systems, ensuring stable, secure, and efficient operations. As a technology professional, I believe learning is a never-ending process. By continuously sharpening my skills and broadening my experience, I am committed to delivering relevant innovations and making a real impact through meaningful digital solutions.
-      </p>
-    </section>
-
-    <section class="container" id="skills">
-      <div class="section-title">Technical Skills</div>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>Fullstack Web Development</h5>
-            <p>Laravel, React.js, Node.js, Express, REST API, MySQL, PostgreSQL, MongoDB, Docker, CI/CD, Cloud Deployment (Vercel, Netlify, DigitalOcean), SEO Optimization, Security Best Practices.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>Mobile App Development</h5>
-            <p>Android (Kotlin), Flutter, API Integration, Firebase, SQLite, Push Notification, UI/UX Design, Cross-Platform Apps.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>IoT & Embedded Systems</h5>
-            <p>ESP32, Arduino, Raspberry Pi, Sensor Integration, Real-time Monitoring, MQTT, Serial & Wireless Communication, Cloud IoT Platform.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>Artificial Intelligence & Data</h5>
-            <p>Python (Machine Learning, Data Analysis), TensorFlow.</p>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="card p-4 h-100">
-            <h5>Network & Cloud Engineering</h5>
-            <p>Linux Server, Web Server, DHCP, Mail Server, Mikrotik, VPN, Network Security, Cloud Infrastructure, Monitoring & Management, CCTV & VOIP Setup.</p>
-          </div>
-        </div>
-    </section>
-
-    <section class="container" id="projects">
-      <div class="section-title">Featured Projects</div>
-      <div class="row g-4">
-        <div class="col-12 mb-2">
-          <div class="p-3 mb-3 rounded-3 shadow-sm d-flex align-items-center" style="background: linear-gradient(90deg,#e3f0ff 70%,#cbe2ff 100%);">
-            <i class="fas fa-check-circle fa-lg text-success me-2"></i>
-            <h5 class="mb-0 text-primary" style="font-weight:700; letter-spacing:1px;">Completed Projects</h5>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>Smart IoT Automatic Plantation Irrigation</h5>
-            <p>Developed an IoT-based automatic irrigation system for plantations, equipped with soil moisture, temperature, and fertilizer sensors. The system autonomously waters or fertilizes based on sensor data, integrated with an Android app for remote monitoring and control.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>IoT Attendance System Integrated with Web Server</h5>
-            <p>Created a digital attendance solution using IoT, connected to a Laravel-based web server for real-time presence tracking, resume collection, and automated reporting for events such as PKL GP Ansor Tulungagung 2025.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>Real-time Tobacco Oven Monitoring & Control</h5>
-            <p>Developed a Flutter app for real-time monitoring and control of an automated tobacco oven using IoT. The system enables automatic temperature management and drying processes, improving efficiency and product quality.</p>
-          </div>
-        </div>
-        <div class="col-12 mt-4 mb-2">
-          <div class="p-3 mb-3 rounded-3 shadow-sm d-flex align-items-center" style="background: linear-gradient(90deg,#eaffea 70%,#d6ffd6 100%);">
-            <i class="fas fa-spinner fa-lg text-success me-2"></i>
-            <h5 class="mb-0 text-success" style="font-weight:700; letter-spacing:1px;">Ongoing Projects</h5>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>IoT-based Irrigation Reservoir Monitoring</h5>
-            <p>Developing a system for monitoring temperature, water level, and flow rate in irrigation reservoirs using IoT. Data is accessible in real-time via a Flutter app, supporting efficient water resource management.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>Smart Waste Marketplace</h5>
-            <p>Building an innovative web app to connect owners of recyclable waste with those in need. Features include search, transactions, and digital waste management, promoting a circular economy and environmental sustainability.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>Tulungagung Tourism Destination Promotion</h5>
-            <p>Developing a web app to promote tourism destinations in Tulungagung, featuring interactive galleries, maps, and recommendations to boost local tourism and support small businesses.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>Batangsaren Village Network Infrastructure Development</h5>
-            <p>Implementing a new internet network infrastructure for Batangsaren village, including device installation, configuration, and network management to provide stable and fast internet access for all residents.</p>
-          </div>
-        </div>
+    <div class="projects-cols" id="projects-cols"></div>
+  </section>
+  <section id="contact">
+    <footer class="footer-contact">
+      <div class="footer-contact-list">
+        <span><i class="fas fa-envelope"></i> syarifahsanit@gmail.com</span>
+        <span><i class="fas fa-phone"></i> +62 878-4294-9212</span>
       </div>
-    </section>
+      <div class="footer-copyright">&copy; 2025 Syarif A. Taqwim</div>
+    </footer>
+  </section>
 
-    <section class="container" id="contact">
-      <div class="section-title">Contact</div>
-      <ul class="list-unstyled">
-        <li><i class="fas fa-envelope me-2"></i>syarifahsanit@gmail.com</li>
-        <li><i class="fas fa-phone me-2"></i>+62 878-4294-9212</li>
-        <li><i class="fas fa-location-dot me-2"></i>Tulungagung, East Java, Indonesia</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Syarif A. Taqwim
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
-    const themeIcon = document.getElementById('themeIcon');
-
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-      if(document.body.classList.contains('dark-mode')){
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-        localStorage.setItem('theme', 'light');
+  <style>
+    .footer-contact {
+      max-width: 700px;
+      margin: 2.5rem auto 0 auto;
+      padding: 1.5rem 0 0.5rem 0;
+      text-align: center;
+      color: var(--text-sub);
+      font-size: 1.08rem;
+    }
+    .footer-contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.7rem;
+    }
+    .footer-contact-list i {
+      margin-right: 0.5em;
+      color: #ffe084;
+    }
+    .footer-copyright {
+      font-size: 0.98rem;
+      color: #666;
+    }
+    .project-status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      justify-content: center;
+      margin-bottom: 2.2rem;
+    }
+    .status-badge {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 6px;
+      margin-right: 0.3rem;
+      vertical-align: middle;
+    }
+    .status-badge.finished {
+      background: #FFA500;
+      border: 2px solid #FFA500;
+    }
+    .status-badge.ongoing {
+      background: #4FC3F7;
+      border: 2px solid #4FC3F7;
+    }
+    .status-label {
+      color: var(--text-sub);
+      font-size: 1.05rem;
+      margin-right: 1.2rem;
+    }
+    .project-year.finished {
+      color: #FFA500;
+      font-weight: 600;
+    }
+    .project-year.ongoing {
+      color: #4FC3F7;
+      font-weight: 600;
+    }
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4em;
+      font-size: 0.98rem;
+      color: #b5baff;
+      margin-top: 0.4em;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .github-link i {
+      font-size: 1.1em;
+    }
+    .github-link:hover {
+      color: #ffe084;
+      text-decoration: underline;
+    }
+    .about-me-section {
+      max-width: 700px;
+      margin: 0 auto 2.5rem auto;
+      padding: 2.5rem 0 0 0;
+      text-align: center;
+    }
+    .about-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .about-desc {
+      color: var(--text-sub);
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+    .whatido-section {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem auto;
+      padding: 2.5rem 0 0 0;
+    }
+    .whatido-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 2.2rem;
+      text-align: center;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .whatido-cols {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .whatido-col {
+      background: #232323;
+      border-radius: 1.2rem;
+      padding: 2rem 2.2rem 1.5rem 2.2rem;
+      min-width: 260px;
+      max-width: 350px;
+      flex: 1 1 260px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+      color: #fff;
+      text-align: left;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .whatido-col:hover {
+      box-shadow: 0 8px 32px 0 rgba(255,224,132,0.18), 0 2px 16px 0 rgba(0,0,0,0.13);
+      transform: translateY(-6px) scale(1.03);
+      background: #282828;
+      color: #ffe084;
+    }
+    .whatido-col:hover .whatido-heading,
+    .whatido-col:hover .whatido-icon {
+      color: #ffe084;
+    }
+    .whatido-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.7rem;
+      color: #ffe084;
+    }
+    .whatido-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+    .whatido-col ul {
+      padding-left: 1.2rem;
+      color: var(--text-sub);
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+    .projects-section {
+      max-width: 1200px;
+      margin: 0 auto 2.5rem auto;
+      padding: 2.5rem 0 0 0;
+    }
+    .projects-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 2.2rem;
+      text-align: center;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .projects-cols {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .projects-col {
+      background: #232323;
+      border-radius: 1.2rem;
+      padding: 2rem 2.2rem 1.5rem 2.2rem;
+      min-width: 260px;
+      max-width: 400px;
+      flex: 1 1 260px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+      color: #fff;
+      text-align: left;
+    }
+    .projects-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+    .projects-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .projects-list li {
+      margin-bottom: 1.3rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid #333;
+    }
+    .projects-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .project-title {
+      font-weight: 600;
+      color: #ffe084;
+      font-size: 1.08rem;
+      display: inline-block;
+      margin-right: 0.7rem;
+    }
+    .project-year {
+      color: #b5baff;
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+    .project-desc {
+      color: var(--text-sub);
+      font-size: 0.98rem;
+      margin-top: 0.2rem;
+    }
+    @media (max-width: 900px) {
+      .whatido-cols, .projects-cols {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+      }
+      .whatido-col, .projects-col {
+        max-width: 98vw;
       }
     }
-
-    // Load saved theme from localStorage
-    document.addEventListener('DOMContentLoaded', () => {
-      if(localStorage.getItem('theme') === 'dark'){
-        document.body.classList.add('dark-mode');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-      }
-    });
-
-    themeToggleBtn.addEventListener('click', toggleTheme);
-  </script>
+  </style>
 </body>
+<script>
+fetch('project.json')
+  .then(res => res.json())
+  .then(projects => {
+    const programming = projects.filter(p => p.category === 'programming');
+    const networking = projects.filter(p => p.category === 'networking');
+
+    function renderProjects(list, heading) {
+      return `<div class="projects-col">
+        <div class="projects-heading">${heading}</div>
+        <ul class="projects-list">
+          ${list.map(p => `
+            <li>
+              <span class="project-title">${p.title}</span>
+              <span class="project-year ${p.status}">${p.year}</span>
+              <div class="project-desc">${p.desc}</div>
+              <a class="github-link" href="${p.github_link}" target="_blank">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </li>
+          `).join('')}
+        </ul>
+      </div>`;
+    }
+
+    document.getElementById('projects-cols').innerHTML =
+      renderProjects(programming, 'Programming') + renderProjects(networking, 'Networking');
+  });
+</script>
+
 </html>
