@@ -1,0 +1,36 @@
+{
+  "program_kerja": [
+    {
+      "judul": "Kajian Rutin",
+      "deskripsi": "Kajian mingguan seputar keagamaan dan organisasi.",
+      "kategori": "Keagamaan"
+    },
+    {
+      "judul": "Pelatihan Teknologi",
+      "deskripsi": "Workshop dasar IT, desain, dan digital literasi.",
+      "kategori": "Pendidikan"
+    },
+    {
+      "judul": "Pengabdian Masyarakat",
+      "deskripsi": "Kegiatan sosial bertujuan membantu warga sekitar.",
+      "kategori": "Sosial"
+    }
+  ],
+  "kontak_pengurus": [
+    {
+      "nama": "Ahmad Nafis",
+      "jabatan": "Ketua IPNU",
+      "whatsapp": "6281234567890"
+    },
+    {
+      "nama": "Rina Lestari",
+      "jabatan": "Ketua IPPNU",
+      "whatsapp": "6289876543210"
+    },
+    {
+      "nama": "Slamet",
+      "jabatan": "Sekretaris",
+      "whatsapp": "6281122334455"
+    }
+  ]
+}
