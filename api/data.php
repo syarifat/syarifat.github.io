@@ -96,6 +96,15 @@ $projects = [
         "stack" => ["Kotlin", "PHP", "MySQL"],
         "demo_link" => "#",
         "repo_link" => "#"
+    ],
+    [
+        "title" => "Network CCTV Activation System",
+        "category" => "Networking",
+        "image" => "https://images.unsplash.com/photo-1589935447067-5531094415d1?q=80&w=870&auto=format&fit=crop",
+        "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "stack" => ["None"],
+        "demo_link" => "#",
+        "repo_link" => "#"
     ]
 ];
 ?>
