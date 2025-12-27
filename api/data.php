@@ -44,29 +44,56 @@ $services = [
 // Proyek-Proyek
 $projects = [
     [
-        "title" => "Sistem IoT Monitoring",
-        "category" => "IoT & Embedded",
-        "image" => "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop", // Ganti dengan screenshot asli
-        "desc" => "Sistem monitoring suhu dan kelembaban realtime menggunakan ESP32 dan Firebase.",
-        "stack" => ["C++", "Firebase", "Android"],
-        "demo_link" => "https://demo-project-anda.com",
-        "repo_link" => "https://github.com/username/repo"
+        "title" => "KaSiPay",
+        "category" => "Web Development",
+        "image" => "https://images.unsplash.com/photo-1647427017067-8f33ccbae493?q=80&w=870&auto=format&fit=crop", // Ganti dengan screenshot asli
+        "desc" => "A cashless canteen payment system using RFID technology to accelerate transactions, simplify balance management, and improve operational efficiency in schools.",
+        "stack" => ["Laravel", "Javascript", "MySQL"],
+        "demo_link" => "https://kelompok3.karyabersama.online/",
+        "repo_link" => "#"
     ],
     [
-        "title" => "E-Commerce Dashboard",
+        "title" => "siPredi",
         "category" => "Web Development",
-        "image" => "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
-        "desc" => "Dashboard admin untuk manajemen stok barang dengan fitur reporting otomatis.",
-        "stack" => ["Laravel", "MySQL", "Bootstrap"],
+        "image" => "https://images.unsplash.com/photo-1747674148491-51f8a5c723db?q=80&w=866&auto=format&fit=crop", // Ganti dengan screenshot asli
+        "desc" => "Smart student attendance system utilizing RFID technology for real-time tracking, integrated with automated WhatsApp notifications for parents/guardians.",
+        "stack" => ["Laravel", "Javascript", "MySQL"],
+        "demo_link" => "https://vercel-siprediv2.vercel.app/",
+        "repo_link" => "#"
+    ],
+    [
+        "title" => "Sistem Penggajian Otomatis",
+        "category" => "Web Development",
+        "image" => "https://images.unsplash.com/photo-1711606815631-38d32cdaec3e?q=80&w=870&auto=format&fit=crop",
+        "desc" => "Efficient payroll management system that automatically calculates salaries and applies deductions for workplace errors to maintain performance standards.",
+        "stack" => ["Laravel", "Javascript", "MySQL"],
+        "demo_link" => "https://sistem-penggajian.vercel.app/",
+        "repo_link" => "#"
+    ],
+    [
+        "title" => "Inventory Gudang",
+        "category" => "Web Development",
+        "image" => "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=870&auto=format&fit=crop",
+        "desc" => "This system manages inventory, item transactions, customer and supplier data, units, item types, and user roles in a centralized warehouse.",
+        "stack" => ["Laravel", "Javascript", "MySQL"],
+        "demo_link" => "https://inventorygudang.vercel.app/",
+        "repo_link" => "#"
+    ],
+    [
+        "title" => "Dummy IoT Project",
+        "category" => "IoT Development",
+        "image" => "https://images.unsplash.com/photo-1614846027182-cecfee3a427b?q=80&w=870&auto=format&fit=crop",
+        "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "stack" => ["C++", "PHP", "MySQL"],
         "demo_link" => "#",
         "repo_link" => "#"
     ],
     [
-        "title" => "Aplikasi Presensi QR",
-        "category" => "Android App",
-        "image" => "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
-        "desc" => "Aplikasi absensi mobile berbasis lokasi (GPS) dan QR Code scanner.",
-        "stack" => ["Kotlin", "Jetpack Compose", "API"],
+        "title" => "Dummy Android App",
+        "category" => "Android Development",
+        "image" => "https://images.unsplash.com/photo-1480694313141-fce5e697ee25?q=80&w=870&auto=format&fit=crop",
+        "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "stack" => ["Kotlin", "PHP", "MySQL"],
         "demo_link" => "#",
         "repo_link" => "#"
     ]
