@@ -6,6 +6,10 @@
   },
   "rewrites": [
     {
+      "source": "/wifi",
+      "destination": "/api/wifi/index.php"
+    },
+    {
       "source": "/(.*)",
       "destination": "/api/index.php"
     }
