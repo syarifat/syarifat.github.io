@@ -1,13 +1,13 @@
 {
   "functions": {
-    "api/*.php": {
+    "api/**/*.php": {
       "runtime": "vercel-php@0.7.1"
     }
   },
   "rewrites": [
     {
       "source": "/wifi",
-      "destination": "/api/wifi/index.html"
+      "destination": "/api/wifi/index.php"
     },
     {
       "source": "/(.*)",
