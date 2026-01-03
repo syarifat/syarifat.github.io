@@ -7,7 +7,7 @@
   "rewrites": [
     {
       "source": "/wifi",
-      "destination": "/api/wifi/index.php"
+      "destination": "/api/wifi/index.html"
     },
     {
       "source": "/(.*)",
