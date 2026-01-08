@@ -78,16 +78,12 @@
     </style>
 </head>
 <body>
-
-    <div class="container py-4">
-        
+    <div class="container py-4"> 
         <div class="text-center main-header">
             <h2 class="fw-bold mb-2">Pilihan Paket Internet</h2>
             <p class="text-muted">Daftar harga dan kecepatan paket WiFi rumah</p>
         </div>
-
         <div class="row g-4 justify-content-center">
-
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-paket h-100 p-4 text-center">
                     <div class="card-body">
@@ -101,7 +97,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-paket h-100 p-4 text-center">
                     <div class="card-body">
@@ -115,7 +110,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-paket h-100 p-4 text-center">
                     <div class="card-body">
@@ -129,7 +123,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-paket h-100 p-4 text-center">
                     <div class="card-body">
@@ -143,7 +136,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-paket h-100 p-4 text-center">
                     <div class="card-body">
@@ -157,7 +149,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-paket h-100 p-4 text-center">
                     <div class="card-body">
@@ -171,7 +162,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-paket h-100 p-4 text-center border-0 shadow-sm">
                     <div class="card-body">
@@ -185,9 +175,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
         <footer class="text-center mt-5 text-muted small">
             &copy; 2025 Layanan WiFi Rumah
         </footer>
