@@ -13,29 +13,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const hiddenElements = document.querySelectorAll(".fade-in");
     hiddenElements.forEach((el) => observer.observe(el));
-    // --- FILTER PROJECT LOGIC ---
+
+    // --- LANGUAGE TOGGLE LOGIC (BARU) ---
+    const langToggle = document.getElementById('langToggle');
+    if(langToggle) {
+        langToggle.addEventListener('change', function() {
+            if(this.checked) {
+                // Switch to English
+                window.location.search = '?lang=en';
+            } else {
+                // Switch to Indonesia
+                window.location.search = '?lang=id';
+            }
+        });
+    }
+
+    // --- FILTER PROJECT LOGIC (LAMA) ---
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // 1. Hapus class 'active' dari semua tombol
             filterBtns.forEach(b => b.classList.remove('active'));
-            // 2. Tambahkan class 'active' ke tombol yang diklik
             btn.classList.add('active');
-
             const filterValue = btn.getAttribute('data-filter');
 
-            // 3. Loop semua project card
             projectItems.forEach(item => {
                 const itemCategory = item.getAttribute('data-category');
-
                 if (filterValue === 'all' || filterValue === itemCategory) {
-                    // Tampilkan item
                     item.classList.remove('hide');
-                    item.classList.add('fade-in'); // Trigger animasi ulang (opsional)
+                    item.classList.add('fade-in'); 
                 } else {
-                    // Sembunyikan item
                     item.classList.add('hide');
                 }
             });
