@@ -14,21 +14,26 @@
     <nav>
         <div class="container nav-wrapper">
             <div class="logo">SAT Project</div>
+
+            <div class="lang-switch-container lang-switch-mobile-visible">
+                <span class="lang-label <?= $lang == 'id' ? 'active' : '' ?>">ID</span>
+                <label class="switch">
+                    <input type="checkbox" id="langToggle" <?= $lang == 'en' ? 'checked' : '' ?>>
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-label <?= $lang == 'en' ? 'active' : '' ?>">EN</span>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#home"><?= $text['home'] ?></a></li>
                 <li><a href="#services"><?= $text['services'] ?></a></li>
                 <li><a href="#projects"><?= $text['projects'] ?></a></li>
                 <li><a href="#contact"><?= $text['contact'] ?></a></li>
-                
-                <li class="lang-switch-container">
-                    <span class="lang-label <?= $lang == 'id' ? 'active' : '' ?>">ID</span>
-                    <label class="switch">
-                        <input type="checkbox" id="langToggle" <?= $lang == 'en' ? 'checked' : '' ?>>
-                        <span class="slider round"></span>
-                    </label>
-                    <span class="lang-label <?= $lang == 'en' ? 'active' : '' ?>">EN</span>
-                </li>
-            </ul>
+                </ul>
+            
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
