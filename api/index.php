@@ -29,11 +29,7 @@
                 <li><a href="#services"><?= $text['services'] ?></a></li>
                 <li><a href="#projects"><?= $text['projects'] ?></a></li>
                 <li><a href="#contact"><?= $text['contact'] ?></a></li>
-                </ul>
-            
-            <div class="hamburger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+            </ul>
         </div>
     </nav>
 
