@@ -6,8 +6,8 @@
   },
   "rewrites": [
     {
-      "source": "/qr-generator(.*)", 
-      "destination": "/api/qr-generator/index.php"
+      "source": "/qr(.*)", 
+      "destination": "/api/qr/index.php"
     },
     {
       "source": "/wifi(.*)",
