@@ -6,12 +6,12 @@
   },
   "rewrites": [
     {
-      "source": "/qr(.*)", 
-      "destination": "/api/qr/index.php"
-    },
-    {
       "source": "/wifi(.*)",
       "destination": "/api/wifi/index.php"
+    },
+    {
+      "source": "/qr(.*)", 
+      "destination": "/api/qr/index.php"
     },
     {
       "source": "/(.*)",
