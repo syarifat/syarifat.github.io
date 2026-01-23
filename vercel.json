@@ -11,7 +11,7 @@
     },
     {
       "source": "/qr(.*)", 
-      "destination": "/api/qr/index.php"
+      "destination": "/api/qr/index.html"
     },
     {
       "source": "/(.*)",
