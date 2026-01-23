@@ -6,11 +6,11 @@
   },
   "rewrites": [
     {
-      "source": "/qr-generator",
+      "source": "/qr-generator(.*)", 
       "destination": "/api/qr-generator/index.php"
     },
     {
-      "source": "/wifi",
+      "source": "/wifi(.*)",
       "destination": "/api/wifi/index.php"
     },
     {
