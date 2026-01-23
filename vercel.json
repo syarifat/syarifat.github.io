@@ -6,16 +6,14 @@
   },
   "rewrites": [
     {
-      "source": "/qr(/.*)?", 
-      "destination": "/api/qr/index.html"
-    },
-    {
-      "source": "/wifi(/.*)?",
+      "source": "/wifi",
       "destination": "/api/wifi/index.php"
     },
     {
-      "source": "/(.*)",
+      "source": "/",
       "destination": "/api/index.php"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
