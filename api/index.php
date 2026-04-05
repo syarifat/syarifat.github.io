@@ -1,6 +1,6 @@
 <?php include 'data.php'; ?>
 <!DOCTYPE html>
-<html lang="id">
+<html lang="<?= $lang ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,21 @@
     <nav>
         <div class="container nav-wrapper">
             <div class="logo">SAT Project</div>
+
+            <div class="lang-switch-container lang-switch-mobile-visible">
+                <span class="lang-label <?= $lang == 'id' ? 'active' : '' ?>">ID</span>
+                <label class="switch">
+                    <input type="checkbox" id="langToggle" <?= $lang == 'en' ? 'checked' : '' ?>>
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-label <?= $lang == 'en' ? 'active' : '' ?>">EN</span>
+            </div>
+
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home"><?= $text['home'] ?></a></li>
+                <li><a href="#services"><?= $text['services'] ?></a></li>
+                <li><a href="#projects"><?= $text['projects'] ?></a></li>
+                <li><a href="#contact"><?= $text['contact'] ?></a></li>
             </ul>
         </div>
     </nav>
@@ -26,18 +36,18 @@
     <header class="hero" id="home">
     <div class="container hero-wrapper">
         <div class="hero-text">
-            <span class="badge">Hi there, I'm <?= $profile_name ?></span>
-            <h1 class="reveal-text">Building Digital <br> <span class="accent">Experiences.</span></h1>
-            <p class="reveal-text delay-1" align="justify"><?= $profile_desc ?></p>
+            <span class="badge"><?= $text['greeting'] ?> <?= $profile_name ?></span>
+            <h1 class="reveal-text"><?= $text['hero_title_1'] ?> <br> <span class="accent"><?= $text['hero_title_2'] ?></span></h1>
+            <p class="reveal-text delay-1" align="justify"><?= $text['hero_desc'] ?></p>
             
             <div class="stats reveal-text delay-3">
                 <div class="stat-item">
                     <h3>3+</h3>
-                    <p>Years Exp.</p>
+                    <p><?= $text['exp_years'] ?></p>
                 </div>
                 <div class="stat-item">
                     <h3>10+</h3>
-                    <p>Projects</p>
+                    <p><?= $text['total_projects'] ?></p>
                 </div>
             </div>
         </div>
@@ -53,8 +63,8 @@
     <section class="services section-padding" id="services">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>What I Do</h2>
-                <p>Spesialisasi teknis yang saya tawarkan.</p>
+                <h2><?= $text['what_i_do'] ?></h2>
+                <p><?= $text['what_i_do_desc'] ?></p>
             </div>
 
             <div class="services-grid">
@@ -80,14 +90,13 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-                <h2>Featured Projects</h2>
-                <p>Beberapa project terbaik yang sudah di-hosting.</p>
+                <h2><?= $text['featured_projects'] ?></h2>
+                <p><?= $text['featured_projects_desc'] ?></p>
             </div>
 
             <div class="filter-container fade-in">
-                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn active" data-filter="all"><?= $text['filter_all'] ?></button>
                 <?php 
-                // Mengambil kategori unik dari array projects secara otomatis
                 $categories = array_unique(array_column($projects, 'category'));
                 foreach ($categories as $category): 
                 ?>
@@ -101,7 +110,7 @@
                     <div class="card-image">
                         <img src="<?= $project['image'] ?>" alt="<?= $project['title'] ?>">
                         <div class="overlay">
-                            <a href="<?= $project['demo_link'] ?>" target="_blank" class="btn-icon" title="View Demo"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="<?= $project['demo_link'] ?>" target="_blank" class="btn-icon" title="<?= $text['view_demo'] ?>"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <div class="card-content">
@@ -114,8 +123,8 @@
                             <?php endforeach; ?>
                         </div>
                         <div class="card-actions">
-                            <a href="<?= $project['demo_link'] ?>" target="_blank" class="link-btn">Live Demo <i class="fas fa-arrow-right"></i></a>
-                            <a href="<?= $project['repo_link'] ?>" target="_blank" class="link-btn text-muted">Code</a>
+                            <a href="<?= $project['demo_link'] ?>" target="_blank" class="link-btn"><?= $text['live_demo'] ?> <i class="fas fa-arrow-right"></i></a>
+                            <a href="<?= $project['repo_link'] ?>" target="_blank" class="link-btn text-muted"><?= $text['code'] ?></a>
                         </div>
                     </div>
                 </div>
@@ -128,18 +137,18 @@
         <div class="container">
             <div class="footer-cta fade-in">
                 <div class="cta-text">
-                    <h2>Have a project in mind?</h2>
-                    <p>Let's discuss how I can help bring your digital vision to life.</p>
+                    <h2><?= $text['cta_title'] ?></h2>
+                    <p><?= $text['cta_desc'] ?></p>
                 </div>
             </div>
             <hr class="footer-divider">
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>SAT Project.</h3>
-                    <p>Delivering integrated solutions across Web, Android Apps, IoT, and Networking for a smarter, connected future.</p>
+                    <p><?= $text['footer_brand_desc'] ?></p>
                 </div>
                 <div class="footer-social">
-                    <h4>Connect</h4>
+                    <h4><?= $text['connect'] ?></h4>
                     <div class="social-icons">
                         <a href="https://wa.me/6281234567890" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -151,7 +160,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <?= date('Y') ?> <strong><?= $profile_name ?></strong>. All rights reserved.</p>
+                <p>&copy; <?= date('Y') ?> <strong><?= $profile_name ?></strong>. <?= $text['rights'] ?></p>
             </div>
         </div>
     </footer>

@@ -10,8 +10,10 @@
       "destination": "/api/wifi/index.php"
     },
     {
-      "source": "/(.*)",
+      "source": "/",
       "destination": "/api/index.php"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
